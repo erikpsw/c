@@ -5,14 +5,14 @@ using namespace std;
 
 struct vertex
 {
-	int pare = 0;
-	int find = 0; 
-	int finish=0;
+	int pare = 0;//父节点
+	int find = 0; //访问时间
+	int finish=0;//返回时间
 	int color = 0;
 };
-vector<int>adj[6];
-vertex vert[6];
-int time = 0;
+vector<int>adj[6];//邻接表
+vertex vert[6];//六个点
+int time = 0;//目前时间
 
 void DFS_visit(int num)
 {
@@ -34,7 +34,7 @@ void DFS()
 {
 	for (int i = 0; i <= 5; i++)
 	{
-		if (vert[i].color == 0)
+		if (vert[i].color == 0)//没被访问
 			DFS_visit(i);
 	}
 }
